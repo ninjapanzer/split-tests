@@ -47,7 +47,7 @@ runs:
         fi
         echo $EXCLUDE_GLOB
 
-        TESTS=$(./split_tests -split-index ${{ inputs.split-index }} -split-total ${{ inputs.split-total }} -glob '${{ inputs.glob }}' $EXCLUDE_GLOB)
+        TESTS=$(./split_tests -exclude-glob '${{ inputs.exclude-glob }}' -split-index ${{ inputs.split-index }} -split-total ${{ inputs.split-total }} -glob '${{ inputs.glob }}')
         echo "./split_tests ${SPLIT_BY} -split-index=${{ inputs.split-index }} -split-total=${{ inputs.split-total }} -glob='${{ inputs.glob }}' $EXCLUDE_GLOB"
 
         echo "${TESTS}"
