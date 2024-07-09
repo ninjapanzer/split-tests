@@ -66,8 +66,8 @@ jobs:
           split-index: 0
       - run: echo "The output test suite is ${{ steps.split-tests.outputs.test-suite }}"
       - run: |
-          if echo "${{ steps.split-tests.outputs.test-suite }}" | grep -q 'token_spec.rb'; then
-            echo "token_spec.rb is included in the test-suite, failing the job."
+          if echo "${{ steps.split-tests.outputs.test-suite }}" | grep -q '/token_spec.rb'; then
+            echo "/token_spec.rb is included in the test-suite, failing the job."
             exit 1
           else
             echo "token_spec.rb is not included in the test-suite, proceeding."
