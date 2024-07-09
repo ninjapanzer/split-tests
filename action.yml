@@ -60,7 +60,7 @@ runs:
 
         TESTS=$(./split_tests ${SPLIT_BY} -split-index=${{ inputs.split-index }} -split-total=${{ inputs.split-total }} -glob='${{ inputs.glob }}' ${EXCLUDE_GLOB})
 
-        echo "$TESTS"
+        echo "${TESTS}"
 
         echo "test-suite=${TESTS}" >> $GITHUB_OUTPUT          
       shell: bash
