@@ -61,7 +61,7 @@ jobs:
         name: Run this action
         with:
           glob: examples/spec/**/*_spec.rb
-          exclude-glob: examples/spec/**/t*_spec.rb
+          exclude-glob: examples/spec/**/b*_spec.rb
           split-total: 1
           split-index: 0
       - run: echo "The output test suite is ${{ steps.split-tests.outputs.test-suite }}"
