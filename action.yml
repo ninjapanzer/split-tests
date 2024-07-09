@@ -57,6 +57,7 @@ runs:
         if [ -n "${{ inputs.exclude-glob }}" ]; then
           EXCLUDE_GLOB="-exclude-glob='${{ inputs.exclude-glob }}'"
         fi
+        echo $EXCLUDE_GLOB
 
         TESTS=$(./split_tests ${SPLIT_BY} -split-index=${{ inputs.split-index }} -split-total=${{ inputs.split-total }} -glob='${{ inputs.glob }}' ${EXCLUDE_GLOB})
 
